@@ -1,32 +1,23 @@
 pipeline {
   agent any
   stages {
-  stage('Build') {
-      steps {
-        script {
-          echo 'mvn clean package -DskipTests -P FullStack'
+    stage('Build') {
+      agent {
+        docker {
+          image 'maven:3.8.4'
         }
       }
-    }
-  stage('Test') {
       steps {
-        script {
-          echo 'mvn test'
-        }
+        sh 'mvn clean package -DskipTests -P FullStack'
+      }
+    stage('server') {
+      steps {
+        sh 'docker build -t auth_image .'
       }
     }
-  stage('server') {
+    stage('docker') {
       steps {
-        script {
-          echo 'docker build image -t auth_image .'
-        }
-      }
-    }
-  stage('docker') {
-      steps {
-        script {
-          echo 'docker-compose up --build -d'
-        }
+        sh 'docker-compose up --build -d'
       }
     }
 
