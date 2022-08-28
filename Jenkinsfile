@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh 'mvn clean package -DskipTests -P FullStack'
       }
+    }
     stage('server') {
       steps {
         sh 'docker build -t auth_image .'
