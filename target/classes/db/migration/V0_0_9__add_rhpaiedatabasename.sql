@@ -1,0 +1,1 @@
+ALTER TABLE [Master].[MasterCompany] ADD RHPaieDataBaseName [NVARCHAR](255) NULL;

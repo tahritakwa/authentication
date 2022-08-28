@@ -1,0 +1,1 @@
+ALTER TABLE [Master].[MasterCompany] ADD SettingsDataBaseName [NVARCHAR](255) NULL;
