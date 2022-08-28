@@ -1,0 +1,5 @@
+SET IDENTITY_INSERT [dbo].[DBCrmConfig] ON
+INSERT [dbo].[DBCrmConfig] ([id], [url], [username], [password], [driverClassName], [companyCode], [env], [module]) VALUES (1, N'jdbc:sqlserver://192.168.1.133;databaseName=Stark-CRM', N'dev', N'Spark-It2016', N'com.microsoft.sqlserver.jdbc.SQLServerDriver', N'C001', N'dev', N'crm')
+INSERT [dbo].[DBCrmConfig] ([id], [url], [username], [password], [driverClassName], [companyCode], [env], [module]) VALUES (2, N'jdbc:sqlserver://192.168.1.133;databaseName=Stark-CRM-C002', N'dev', N'Spark-It2016', N'com.microsoft.sqlserver.jdbc.SQLServerDriver', N'C002', N'dev', N'crm')
+INSERT [dbo].[DBCrmConfig] ([id], [url], [username], [password], [driverClassName], [companyCode], [env], [module]) VALUES (3, N'jdbc:sqlserver://192.168.1.133;databaseName=Stark-CRM-C003', N'dev', N'Spark-It2016', N'com.microsoft.sqlserver.jdbc.SQLServerDriver', N'C003', N'dev', N'crm')
+SET IDENTITY_INSERT [dbo].[DBCrmConfig] OFF

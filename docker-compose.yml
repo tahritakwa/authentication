@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  web:
+    container_name: auth_cont
+    image: auth_image 
+    ports:
+      - 8080:8080
+    networks:
+      - stark_network
+networks:
+  stark_network:
+    external:  
+      name: stark_network
+
+
