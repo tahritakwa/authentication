@@ -1,17 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      agent {
-        docker {
-          image 'maven:3-alpine AS build'
-        }
-      }
+    stage ('Git Checkout') {
       steps {
-        sh 'mvn clean package -DskipTests -P FullStack'
-      }
+        git branch: 'master', credentialsId: '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', url: 'https://github.com/tahritakwa/authentication.git'
     }
-    stage('server') {
+  }
+    stage('build and server') {
       steps {
         sh 'docker build -t auth_image .'
       }
